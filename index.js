@@ -31,4 +31,9 @@ function anagramCheck(string1, string2) {
     }
     return true;
 }
-console.log(anagramCheck("brake", "BAKER"));
+module.exports = { anagramCheck };
+
+if (require.main === module) {
+    const [a = "brake", b = "BAKER"] = process.argv.slice(2);
+    console.log(anagramCheck(a, b));
+}
